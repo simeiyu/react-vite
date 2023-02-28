@@ -33,55 +33,55 @@ const columns = [{
     dataIndex: 'cpu.used',
     key: 'cpu.used',
     sorter: (a:Item, b:Item) => a.cpu.used - b.cpu.used,
-    render: (_, record:Item) => record.cpu.used
+    render: (_:any, record:Item) => record.cpu.used
   }, {
     title: 'CPU总数 (核)',
     dataIndex: 'cpu.total',
     key: 'cpu.total',
     sorter: (a:Item, b:Item) => a.cpu.total - b.cpu.total,
-    render: (_, record:Item) => record.cpu.total
+    render: (_:any, record:Item) => record.cpu.total
   }, {
     title: 'CPU占用率',
     dataIndex: 'cpu.percent',
     key: 'cpu.percent',
     sorter: (a:Item, b:Item) => a.cpu.percent - b.cpu.percent,
-    render: (_, record:Item) => <Percent percent={record.cpu.percent} />
+    render: (_:any, record:Item) => <Percent percent={record.cpu.percent} />
   }, {
     title: '内存占用 (G)',
     dataIndex: 'mem.used',
     key: 'mem.used',
     sorter: (a:Item, b:Item) => a.mem.used - b.mem.used,
-    render: (_, record:Item) => record.mem.used
+    render: (_:any, record:Item) => record.mem.used
   }, {
     title: '内存总数 (G)',
     dataIndex: 'mem.total',
     key: 'mem.total',
     sorter: (a:Item, b:Item) => a.mem.total - b.mem.total,
-    render: (_, record:Item) => record.mem.total
+    render: (_:any, record:Item) => record.mem.total
   }, {
     title: '内存占用率',
     dataIndex: 'mem.percent',
     key: 'mem.percent',
     sorter: (a:Item, b:Item) => a.mem.percent - b.mem.percent,
-    render: (_, record:Item) => <Percent percent={record.mem.percent} />
+    render: (_:any, record:Item) => <Percent percent={record.mem.percent} />
   }, {
     title: '存储资源使用 (G)',
     dataIndex: 'storage.used',
     key: 'storage.used',
     sorter: (a:Item, b:Item) => a.storage.used - b.storage.used,
-    render: (_, record:Item) => record.storage.used
+    render: (_:any, record:Item) => record.storage.used
   }, {
     title: '存储资源总数 (G)',
     dataIndex: 'storage.total',
     key: 'storage.total',
     sorter: (a:Item, b:Item) => a.storage.total - b.storage.total,
-    render: (_, record:Item) => record.storage.total
+    render: (_:any, record:Item) => record.storage.total
   }, {
     title: '存储资源占用率',
     dataIndex: 'storage.percent',
     key: 'storage.percent',
     sorter: (a:Item, b:Item) => a.storage.percent - b.storage.percent,
-    render: (_, record:Item) => <Percent percent={record.storage.percent} />
+    render: (_:any, record:Item) => <Percent percent={record.storage.percent} />
   }]
 
 const ClustersTable: React.FC<ClusterProps> = ({data=[]}) => {

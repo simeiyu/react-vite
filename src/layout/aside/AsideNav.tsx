@@ -1,10 +1,6 @@
 import React from 'react'
-import { createFromIconfontCN } from '@ant-design/icons'
 import { NavLink } from 'react-router-dom'
-
-const IconFont = createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/c/font_1699455_v83jjct7wl.js',
-});
+import IconFont from '@comps/IconFont'
 
 interface AsideMenuProps {
   theme?: 'dark' | 'light';

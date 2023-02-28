@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import checker from 'vite-plugin-checker'
 import legacy from '@vitejs/plugin-legacy'
 import { createStyleImportPlugin, AntdResolve} from 'vite-plugin-style-import';
-import * as path from 'path'
+import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,19 +17,20 @@ export default defineConfig({
     // }),
     createStyleImportPlugin({
       resolves: [AntdResolve()],
-      libs: [
-        {
-          libraryName: 'antd',
-          esModule: true,
-          resolveStyle: (name) => {
-            return `antd/lib/${name}/style/index`
-          },
-        },
-      ],
+      // libs: [
+      //   {
+      //     libraryName: 'antd',
+      //     esModule: true,
+      //     resolveStyle: (name) => {
+      //       return `antd/lib/${name}/style/index`
+      //     }
+      //   }
+      // ]
     })
   ],
   resolve: {
     alias: {
+      "antd": path.resolve(__dirname, "./node_modules/antd"),
       "~antd": path.resolve(__dirname, "./node_modules/antd"),
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@pages": path.resolve(__dirname, "./src/pages"),
@@ -54,11 +55,11 @@ export default defineConfig({
   envPrefix: 'sp-',
   server: {
     port: 8081,
-    // proxy: {
-    //   '/api': {
-    //     target: '',
-    //     changeOrigin: true
-    //   }
-    // }
+    proxy: {
+      '/api': {
+        target: 'http://sp1.xuelangyun.com:30080',
+        changeOrigin: true
+      }
+    }
   }
 })

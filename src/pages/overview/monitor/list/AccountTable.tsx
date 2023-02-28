@@ -38,25 +38,25 @@ const columns = [{
     dataIndex: 'cpu.used',
     key: 'cpu.used',
     sorter: (a:Item, b:Item) => a.cpu.used - b.cpu.used,
-    render: (_, record:Item) => record.cpu.used
+    render: (_:any, record:Item) => record.cpu.used
   }, {
     title: 'CPU占用率',
     dataIndex: 'cpu.percent',
     key: 'cpu.percent',
     sorter: (a:Item, b:Item) => a.cpu.percent - b.cpu.percent,
-    render: (_, record:Item) => <Percent percent={record.cpu.percent} />
+    render: (_:any, record:Item) => <Percent percent={record.cpu.percent} />
   }, {
     title: '内存占用 (G)',
     dataIndex: 'mem.used',
     key: 'mem.used',
     sorter: (a:Item, b:Item) => a.mem.used - b.mem.used,
-    render: (_, record:Item) => record.mem.used
+    render: (_:any, record:Item) => record.mem.used
   }, {
     title: '内存占用率',
     dataIndex: 'mem.percent',
     key: 'mem.percent',
     sorter: (a:Item, b:Item) => a.mem.percent - b.mem.percent,
-    render: (_, record:Item) => <Percent percent={record.mem.percent} />
+    render: (_:any, record:Item) => <Percent percent={record.mem.percent} />
   }]
 
 const AccountTable: React.FC<AccountProps> = ({data=[]}) => {
